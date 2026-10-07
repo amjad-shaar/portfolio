@@ -12,50 +12,138 @@
 const SITE = {
   name: { en: 'Mohammad', ar: 'محمد' },
   url: 'https://example.com/',
-  github: '', // GitHub username, filled after confirmation
+  github: 'amjad-shaar',
   email: '', // contact form opens a mailto: to this address
   socials: [
-    // { label: 'GitHub', icon: 'github', url: 'https://github.com/username' },
+    { label: 'GitHub', icon: 'github', url: 'https://github.com/amjad-shaar' },
     // { label: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com/in/username' },
   ],
 
-  // About → stat counters. value is a number; suffix is optional ("+", "k").
+  // About → stat counters, all counted from the repositories on GitHub.
   stats: [
-    // { value: 24, suffix: '', label: { en: 'Public repositories', ar: 'مستودعًا عامًا' } },
+    { value: 4, suffix: '', label: { en: 'Laravel platforms', ar: 'منصات Laravel' } },
+    { value: 150, suffix: '+', label: { en: 'Eloquent models designed', ar: 'نموذج Eloquent مصمَّم' } },
+    { value: 238, suffix: '', label: { en: 'Dart files in the Flutter app', ar: 'ملف Dart في تطبيق Flutter' } },
+    { value: 54, suffix: '', label: { en: 'Documented API endpoints', ar: 'نقطة API موثّقة' } },
   ],
 
-  // Skills → two columns. "used: true" marks tech seen in your real repos.
+  // Skills → two columns. "used: true" marks tech seen in the real repos.
   skills: {
     laravel: [
-      { name: 'Laravel' }, { name: 'PHP' }, { name: 'MySQL' }, { name: 'Eloquent ORM' },
-      { name: 'REST APIs' }, { name: 'Blade' }, { name: 'Livewire' }, { name: 'Sanctum' },
-      { name: 'Tailwind CSS' }, { name: 'Git' },
+      { name: 'Laravel 9 → 13', used: true }, { name: 'PHP 8', used: true }, { name: 'MySQL', used: true },
+      { name: 'Eloquent ORM', used: true }, { name: 'REST APIs', used: true }, { name: 'Sanctum', used: true },
+      { name: 'Spatie Permission', used: true }, { name: 'Blade', used: true }, { name: 'Tailwind CSS', used: true },
+      { name: 'Alpine.js', used: true }, { name: 'Bootstrap', used: true }, { name: 'Vite', used: true },
+      { name: 'Postman', used: true },
     ],
     flutter: [
-      { name: 'Flutter' }, { name: 'Dart' }, { name: 'Provider' }, { name: 'Bloc / Cubit' },
-      { name: 'Firebase' }, { name: 'Dio / HTTP' }, { name: 'Hive / SQLite' },
-      { name: 'Material 3' }, { name: 'Android' }, { name: 'iOS' },
+      { name: 'Flutter', used: true }, { name: 'Dart', used: true }, { name: 'GetX', used: true },
+      { name: 'Firebase Messaging', used: true }, { name: 'Cloud Firestore', used: true },
+      { name: 'Google Maps', used: true }, { name: 'Geolocator', used: true }, { name: 'SQLite', used: true },
+      { name: 'Shared Preferences', used: true }, { name: 'Google Sign-In', used: true },
+      { name: 'QR / Scanner', used: true }, { name: 'Android', used: true }, { name: 'iOS', used: true },
     ],
   },
 
   // Projects → only real repositories. The first item with featured: true is shown large.
+  // private: true hides the source link (visitors can't open private repos).
   projects: [
-    // {
-    //   name: 'repo-name',
-    //   repo: 'https://github.com/user/repo-name',
-    //   demo: '',                       // optional live link
-    //   icon: 'server',                 // Lucide icon name
-    //   stack: ['Laravel', 'MySQL'],
-    //   stars: 0, forks: 0,
-    //   featured: false,
-    //   tag:  { en: 'Web platform', ar: 'منصة ويب' },
-    //   desc: { en: '...', ar: '...' },
-    // },
+    {
+      name: 'Syria Zon — Marketplace Platform',
+      repo: 'https://github.com/amjad-shaar/store',
+      private: true,
+      icon: 'store',
+      stack: ['Laravel 12', 'PHP 8.2', 'Sanctum', 'Spatie Permission', 'Tailwind CSS', 'Alpine.js'],
+      featured: true,
+      tag: { en: 'Multi-vendor e-commerce', ar: 'تجارة إلكترونية متعددة المتاجر' },
+      desc: {
+        en: 'A multi-vendor marketplace back end with four separate panels (admin, store owner, delivery and customer) plus a REST API for the mobile app. It covers orders, carts, offers, occasions, commissions, shipping rates, reviews, complaints with live chat, and store analytics, across 59 Eloquent models.',
+        ar: 'خادم متكامل لسوق إلكتروني متعدد المتاجر، يضمّ أربع لوحات منفصلة (للإدارة، وأصحاب المتاجر، والتوصيل، والعملاء) إلى جانب واجهة REST لتطبيق الجوّال. يشمل الطلبات والسلال والعروض والمناسبات والعمولات وأسعار الشحن والتقييمات والشكاوى مع محادثة مباشرة وتحليلات المتاجر، عبر 59 نموذج Eloquent.',
+      },
+    },
+    {
+      name: 'Syria Zon — Mobile App',
+      repo: 'https://github.com/amjad-shaar/store-app',
+      private: true,
+      icon: 'smartphone',
+      stack: ['Flutter', 'Dart', 'GetX', 'Firebase', 'Google Maps', 'SQLite'],
+      tag: { en: 'Flutter shopping app', ar: 'تطبيق تسوّق بـ Flutter' },
+      desc: {
+        en: 'The customer app for the Syria Zon marketplace: browsing stores and products, cart and checkout, order tracking on a map, wishlists, followed stores, complaints chat, push notifications, and phone verification.',
+        ar: 'تطبيق العملاء لسوق Syria Zon: تصفّح المتاجر والمنتجات، والسلة وإتمام الشراء، وتتبّع الطلبات على الخريطة، وقوائم الأمنيات، ومتابعة المتاجر، ومحادثة الشكاوى، والإشعارات الفورية، والتحقق برقم الهاتف.',
+      },
+    },
+    {
+      name: 'SNC — Wallet & Transfers System',
+      repo: 'https://github.com/amjad-shaar/snc',
+      private: true,
+      icon: 'wallet',
+      stack: ['Laravel 13', 'PHP 8.3', 'Bootstrap', 'OTP'],
+      tag: { en: 'Fintech platform', ar: 'منصة مالية' },
+      desc: {
+        en: 'A financial system with user wallets, local and international transfers, offices and agents, a treasury, currency exchange, prepaid cards, and tiered subscription plans, secured with OTP verification and an admin approval queue.',
+        ar: 'منظومة مالية تضمّ محافظ المستخدمين، والحوالات المحلية والدولية، والمكاتب والوكلاء، والخزينة، وتحويل العملات، والبطاقات مسبقة الدفع، وخطط اشتراك متدرّجة، مع حماية بالتحقق عبر OTP وقائمة موافقات للإدارة.',
+      },
+    },
+    {
+      name: 'E-Learning Platform',
+      repo: 'https://github.com/amjad-shaar/hellolaravel',
+      private: true,
+      icon: 'graduation-cap',
+      stack: ['Laravel 9', 'MySQL', 'Laravel Localization', 'Sitemap', 'Schema.org', 'CKEditor'],
+      tag: { en: 'Education platform', ar: 'منصة تعليمية' },
+      desc: {
+        en: 'A multilingual learning site with courses, lesson groups, exams and a question bank, book and article libraries, "try it" code examples, subscription plans, and comments, with an auto-generated sitemap and structured data for SEO.',
+        ar: 'موقع تعليمي متعدد اللغات يضمّ الدورات ومجموعات الدروس والاختبارات وبنك الأسئلة ومكتبات الكتب والمقالات وأمثلة برمجية تفاعلية وخطط الاشتراك والتعليقات، مع خريطة موقع تُولَّد تلقائيًا وبيانات منظَّمة لتحسين الظهور في محركات البحث.',
+      },
+    },
+    {
+      name: 'Voluntary Association',
+      repo: 'https://github.com/amjad-shaar/Voluntary-Association',
+      icon: 'heart-handshake',
+      stack: ['Laravel 12', 'MySQL', 'Spatie Permission', 'Tailwind CSS', 'Bootstrap'],
+      tag: { en: 'Community platform', ar: 'منصة مجتمعية' },
+      desc: {
+        en: 'A volunteering platform where organizers publish campaigns and tasks, volunteers join tasks and submit reports, and admins manage everything from a role-based dashboard.',
+        ar: 'منصة للعمل التطوعي ينشر فيها المنظّمون الحملات والمهام، وينضمّ المتطوعون إلى المهام ويرفعون تقاريرهم، فيما تدير الإدارة كل ذلك من لوحة تحكّم قائمة على الأدوار.',
+      },
+    },
+    {
+      name: 'Syria Zon — API Collection',
+      repo: 'https://github.com/amjad-shaar/syria_zon_api',
+      private: true,
+      icon: 'plug-zap',
+      stack: ['REST API', 'Postman'],
+      tag: { en: 'API documentation', ar: 'توثيق واجهة برمجية' },
+      desc: {
+        en: 'A Postman collection documenting 54 endpoints of the Syria Zon API: auth, products, stores, offers, cart, orders and checkout, comments and votes, reports, and the full user profile.',
+        ar: 'مجموعة Postman توثّق 54 نقطة نهاية في واجهة Syria Zon: المصادقة، والمنتجات، والمتاجر، والعروض، والسلة، والطلبات وإتمام الشراء، والتعليقات والتصويت، والبلاغات، والملف الشخصي كاملًا.',
+      },
+    },
   ],
 
-  // Experience timeline (newest first).
+  // Experience timeline (newest first), dated from repository history.
   timeline: [
-    // { date: '2024', title: { en: '...', ar: '...' }, desc: { en: '...', ar: '...' } },
+    {
+      date: '2026',
+      title: { en: 'Syria Zon: marketplace + Flutter app', ar: 'Syria Zon: سوق إلكتروني وتطبيق Flutter' },
+      desc: { en: 'Built a multi-vendor Laravel 12 back end with a REST API, and the Flutter app that runs on it.', ar: 'بناء خادم Laravel 12 لسوق متعدد المتاجر مع واجهة REST، وتطبيق Flutter الذي يعمل عليها.' },
+    },
+    {
+      date: '2026',
+      title: { en: 'SNC financial system', ar: 'منظومة SNC المالية' },
+      desc: { en: 'Wallets, transfers, treasury and currency exchange on Laravel 13.', ar: 'محافظ وحوالات وخزينة وتحويل عملات على Laravel 13.' },
+    },
+    {
+      date: '2025',
+      title: { en: 'Voluntary Association platform', ar: 'منصة الجمعية التطوعية' },
+      desc: { en: 'Campaigns, tasks and volunteer reports with role-based access.', ar: 'حملات ومهام وتقارير للمتطوعين مع صلاحيات قائمة على الأدوار.' },
+    },
+    {
+      date: '2025',
+      title: { en: 'Multilingual e-learning platform', ar: 'منصة تعليمية متعددة اللغات' },
+      desc: { en: 'Courses, exams, libraries and SEO tooling on Laravel.', ar: 'دورات واختبارات ومكتبات وأدوات لتحسين الظهور في محركات البحث على Laravel.' },
+    },
   ],
 
   services: [
@@ -98,8 +186,8 @@ const translations = {
     cta_contact: "Let's talk",
 
     about_title: 'About me',
-    about_p1: 'I am a full-stack developer who works on both sides of the product: Laravel on the server, Flutter on the phone. I care about clean architecture, readable code, and interfaces that feel effortless.',
-    about_p2: '',
+    about_p1: 'I am a full-stack developer who builds both sides of a product: Laravel on the server and Flutter on the phone. My recent work is Syria Zon, a multi-vendor marketplace with four management panels, a documented REST API, and the Flutter app that runs on it.',
+    about_p2: 'Before that I built a wallet and transfers system, a multilingual e-learning platform, and a volunteering platform. I enjoy designing data models, role-based dashboards, and clean APIs that mobile apps can rely on.',
     about_github_cta: 'See everything on GitHub',
 
     skills_title: 'Two stacks, one craft',
@@ -116,6 +204,7 @@ const translations = {
     projects_stars: 'stars',
     projects_forks: 'forks',
     projects_empty: 'Projects are being pulled from GitHub. They will appear here shortly.',
+    projects_private: 'Private repository',
 
     exp_title: 'The journey',
     exp_sub: 'Milestones along the way.',
@@ -175,8 +264,8 @@ const translations = {
     cta_contact: 'لنتحدّث',
 
     about_title: 'نبذة عنّي',
-    about_p1: 'مطوّر برمجيات متكامل أعمل على طرفَي المنتج: Laravel على الخادم، وFlutter على الهاتف. أُولي عناية خاصة بالبنية النظيفة، والشيفرة المقروءة، والواجهات التي يستخدمها المرء دون عناء.',
-    about_p2: '',
+    about_p1: 'مطوّر برمجيات متكامل أبني طرفَي المنتج: Laravel على الخادم، وFlutter على الهاتف. أحدث أعمالي Syria Zon، وهو سوق إلكتروني متعدد المتاجر يضمّ أربع لوحات إدارة وواجهة REST موثّقة وتطبيق Flutter يعمل عليها.',
+    about_p2: 'وقبل ذلك بنيتُ منظومة للمحافظ والحوالات، ومنصة تعليمية متعددة اللغات، ومنصة للعمل التطوعي. أستمتع بتصميم نماذج البيانات، ولوحات التحكّم القائمة على الأدوار، والواجهات البرمجية النظيفة التي تعتمد عليها تطبيقات الجوّال.',
     about_github_cta: 'اطّلع على أعمالي كاملة في GitHub',
 
     skills_title: 'تقنيتان، وحِرفة واحدة',
@@ -193,6 +282,7 @@ const translations = {
     projects_stars: 'نجمة',
     projects_forks: 'نسخة',
     projects_empty: 'يجري جلب المشاريع من GitHub، وستظهر هنا قريبًا.',
+    projects_private: 'مستودع خاص',
 
     exp_title: 'المسيرة',
     exp_sub: 'محطات بارزة على الطريق.',
@@ -282,7 +372,9 @@ function renderProjects() {
         <span class="project__icon" aria-hidden="true"><i data-lucide="${esc(p.icon || 'folder-git-2')}"></i></span>
         <div class="project__links">
           ${p.demo ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener" aria-label="${esc(t('projects_demo'))}: ${esc(p.name)}"><i data-lucide="external-link"></i></a>` : ''}
-          ${p.repo ? `<a href="${esc(p.repo)}" target="_blank" rel="noopener" aria-label="${esc(t('projects_code'))}: ${esc(p.name)}"><i data-lucide="github"></i></a>` : ''}
+          ${p.private
+            ? `<span class="project__private" title="${esc(t('projects_private'))}"><i data-lucide="lock" aria-hidden="true"></i><span class="sr-only">${esc(t('projects_private'))}</span></span>`
+            : p.repo ? `<a href="${esc(p.repo)}" target="_blank" rel="noopener" aria-label="${esc(t('projects_code'))}: ${esc(p.name)}"><i data-lucide="github"></i></a>` : ''}
         </div>
       </div>
       <span class="project__tag">${featured ? `★ ${esc(t('projects_featured'))} · ` : ''}${esc(pick(p.tag))}</span>
