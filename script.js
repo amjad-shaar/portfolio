@@ -13,10 +13,11 @@ const SITE = {
   name: { en: 'Mohammad', ar: 'محمد' },
   url: 'https://example.com/',
   github: 'amjad-shaar',
-  email: '', // contact form opens a mailto: to this address
+  email: 'amgdshar4@gmail.com', // contact form opens a mailto: to this address
   socials: [
+    { label: '+963 932 113 766', icon: 'message-circle', url: 'https://wa.me/963932113766' }, // WhatsApp
     { label: 'GitHub', icon: 'github', url: 'https://github.com/amjad-shaar' },
-    // { label: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com/in/username' },
+    { label: '@amjad.shaar.dev', icon: 'instagram', url: 'https://www.instagram.com/amjad.shaar.dev/' },
   ],
 
   // About → stat counters, all counted from the repositories on GitHub.

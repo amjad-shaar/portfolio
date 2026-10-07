@@ -711,7 +711,7 @@ body:has(.nav__links.is-open) { overflow: hidden; }
 .field input:focus, .field textarea:focus { border-color: var(--flutter-blue); box-shadow: 0 0 0 4px rgb(47 168 255 / .15); }
 .field:hover input, .field:hover textarea { border-color: rgb(47 168 255 / .4); }
 .field:has(:focus) label,
-.field:has(:not(:placeholder-shown)) label { transform: translateY(-.65rem) scale(.8); color: var(--flutter-blue); }
+.field:has(input:not(:placeholder-shown), textarea:not(:placeholder-shown)) label { transform: translateY(-.65rem) scale(.8); color: var(--flutter-blue); }
 .field:has(.is-invalid) input, .field:has(.is-invalid) textarea,
 .field .is-invalid { border-color: var(--laravel-red); }
 .field:has(.is-invalid) label { color: var(--laravel-red); }
