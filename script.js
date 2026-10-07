@@ -11,7 +11,7 @@
    --------------------------------------------------------- */
 const SITE = {
   name: { en: 'Mohammad', ar: 'محمد' },
-  url: 'https://example.com/',
+  url: 'https://amjad-shaar.github.io/portfolio/',
   github: 'amjad-shaar',
   email: 'amgdshar4@gmail.com', // contact form opens a mailto: to this address
   socials: [
