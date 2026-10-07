@@ -447,7 +447,6 @@ function renderAll() {
   observeReveals();
   bindTilt();
   bindMagnetic();
-  bindCursorTargets();
 }
 
 /* ---------------------------------------------------------
@@ -605,7 +604,7 @@ function initParticles() {
   const canvas = $('#particles');
   if (!canvas || reduceMotion) return;
   const ctx = canvas.getContext('2d');
-  const colors = ['255,62,51', '47,168,255'];
+  const colors = ['154,154,174', '154,154,174'];
   const mouse = { x: -9999, y: -9999 };
   let w, h, dpr, parts = [], running = true, raf;
 
@@ -634,13 +633,13 @@ function initParticles() {
       if (p.y < 0 || p.y > h) p.vy *= -1;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.c},${light ? 0.55 : 0.8})`;
+      ctx.fillStyle = `rgba(${p.c},${light ? 0.45 : 0.5})`;
       ctx.fill();
       for (let j = i + 1; j < parts.length; j++) {
         const q = parts[j];
         const d = Math.hypot(p.x - q.x, p.y - q.y);
         if (d < 120) {
-          ctx.strokeStyle = `rgba(${p.c},${(1 - d / 120) * (light ? 0.18 : 0.25)})`;
+          ctx.strokeStyle = `rgba(${p.c},${(1 - d / 120) * (light ? 0.12 : 0.14)})`;
           ctx.lineWidth = 0.7;
           ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
         }
@@ -724,35 +723,6 @@ function bindTilt() {
   });
 }
 
-// Custom cursor
-const cursor = { x: 0, y: 0, rx: 0, ry: 0 };
-function initCursor() {
-  if (reduceMotion || !finePointer) return;
-  const dot = $('.cursor-dot'), ring = $('.cursor-ring');
-  window.addEventListener('pointermove', (e) => {
-    cursor.x = e.clientX; cursor.y = e.clientY;
-    dot.style.transform = `translate(${cursor.x}px, ${cursor.y}px)`;
-    document.body.classList.add('has-cursor');
-  });
-  document.addEventListener('pointerleave', () => document.body.classList.remove('has-cursor'));
-  const loop = () => {
-    cursor.rx += (cursor.x - cursor.rx) * 0.18;
-    cursor.ry += (cursor.y - cursor.ry) * 0.18;
-    ring.style.transform = `translate(${cursor.rx}px, ${cursor.ry}px)`;
-    requestAnimationFrame(loop);
-  };
-  loop();
-  bindCursorTargets();
-}
-function bindCursorTargets() {
-  $$('a, button, .project, .skill, input, textarea').forEach((el) => {
-    if (el.dataset.cur) return;
-    el.dataset.cur = '1';
-    el.addEventListener('pointerenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('pointerleave', () => document.body.classList.remove('cursor-hover'));
-  });
-}
-
 /* ---------------------------------------------------------
    8. UI controls
    --------------------------------------------------------- */
@@ -820,7 +790,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initControls();
   initScroll();
   initParticles();
-  initCursor();
 });
 // Lucide loads with defer after this file may run; re-render icons once it's ready
 window.addEventListener('load', icons);
