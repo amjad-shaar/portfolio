@@ -10,7 +10,7 @@
    Tech names, code and brand names stay in English.
    --------------------------------------------------------- */
 const SITE = {
-  name: { en: 'Mohammad', ar: 'محمد' },
+  name: { en: 'Amjad', ar: 'أمجد' },
   url: 'https://amjad-shaar.github.io/portfolio/',
   github: 'amjad-shaar',
   email: 'amgdshar4@gmail.com', // contact form opens a mailto: to this address
@@ -169,8 +169,8 @@ const SITE = {
    --------------------------------------------------------- */
 const translations = {
   en: {
-    meta_title: 'Mohammad | Laravel Full-Stack & Flutter Developer',
-    meta_desc: 'Portfolio of Mohammad, a Laravel full-stack developer and Flutter mobile developer building fast web platforms and cross-platform apps.',
+    meta_title: 'Amjad | Laravel Full-Stack & Flutter Developer',
+    meta_desc: 'Portfolio of Amjad, a Laravel full-stack developer and Flutter mobile developer building fast web platforms and cross-platform apps.',
     skip_link: 'Skip to content',
     nav_label: 'Primary',
     nav_home: 'Home',
@@ -187,7 +187,7 @@ const translations = {
     scroll_cue: 'Scroll to About',
 
     hero_eyebrow: "Hello, I'm",
-    hero_name: 'Mohammad',
+    hero_name: 'Amjad',
     hero_roles: ['Full-Stack Web Developer', 'Mobile App Developer', 'API Architect', 'Problem Solver'],
     hero_lead: 'I build fast, secure web platforms with Laravel and smooth cross-platform apps with Flutter, from database schema to the last pixel.',
     cta_projects: 'View my work',
@@ -247,8 +247,8 @@ const translations = {
   },
 
   ar: {
-    meta_title: 'محمد | مطوّر Laravel متكامل ومطوّر تطبيقات Flutter',
-    meta_desc: 'معرض أعمال محمد، مطوّر ويب متكامل بإطار Laravel ومطوّر تطبيقات جوّال بإطار Flutter، يبني منصات ويب سريعة وتطبيقات متعددة المنصات.',
+    meta_title: 'أمجد | مطوّر Laravel متكامل ومطوّر تطبيقات Flutter',
+    meta_desc: 'معرض أعمال أمجد، مطوّر ويب متكامل بإطار Laravel ومطوّر تطبيقات جوّال بإطار Flutter، يبني منصات ويب سريعة وتطبيقات متعددة المنصات.',
     skip_link: 'انتقل إلى المحتوى',
     nav_label: 'التنقّل الرئيسي',
     nav_home: 'الرئيسية',
@@ -265,7 +265,7 @@ const translations = {
     scroll_cue: 'انتقل إلى النبذة',
 
     hero_eyebrow: 'مرحبًا، أنا',
-    hero_name: 'محمد',
+    hero_name: 'أمجد',
     hero_roles: ['مطوّر ويب متكامل', 'مطوّر تطبيقات جوّال', 'مصمّم واجهات برمجية', 'صانع حلول'],
     hero_lead: 'أبني منصات ويب سريعة وآمنة باستخدام Laravel، وتطبيقات سلسة متعددة المنصات باستخدام Flutter، بدءًا من تصميم قاعدة البيانات وحتى آخر تفصيلة في الواجهة.',
     cta_projects: 'استعرض أعمالي',
