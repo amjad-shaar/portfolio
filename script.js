@@ -54,6 +54,10 @@ const SITE = {
       repo: 'https://github.com/amjad-shaar/store',
       private: true,
       icon: 'store',
+      images: [
+        { src: 'images/syria-zon-dashboard.webp', alt: { en: 'Syria Zon store owner dashboard with sales charts', ar: 'لوحة تحكّم صاحب المتجر في Syria Zon مع مخططات المبيعات' } },
+        { src: 'images/syria-zon-store.webp', alt: { en: 'Syria Zon storefront with product cards', ar: 'واجهة متجر Syria Zon مع بطاقات المنتجات' } },
+      ],
       stack: ['Laravel 12', 'PHP 8.2', 'Sanctum', 'Spatie Permission', 'Tailwind CSS', 'Alpine.js'],
       featured: true,
       tag: { en: 'Multi-vendor e-commerce', ar: 'تجارة إلكترونية متعددة المتاجر' },
@@ -79,6 +83,9 @@ const SITE = {
       repo: 'https://github.com/amjad-shaar/snc',
       private: true,
       icon: 'wallet',
+      images: [
+        { src: 'images/snc.webp', alt: { en: 'SNC home page hero', ar: 'الواجهة الرئيسية لمنظومة SNC' } },
+      ],
       stack: ['Laravel 13', 'PHP 8.3', 'Bootstrap', 'OTP'],
       tag: { en: 'Fintech platform', ar: 'منصة مالية' },
       desc: {
@@ -369,6 +376,10 @@ function renderProjects() {
     const featured = i === 0 && p.featured;
     return `
     <article class="project glass reveal${featured ? ' project--featured' : ''}" style="--delay:${(i % 3) * 0.08}s">
+      ${p.images?.length ? `<div class="project__media${p.images.length > 1 ? ' project__media--duo' : ''}">
+        ${(featured ? p.images : p.images.slice(0, 1)).map((img) =>
+          `<img src="${esc(img.src)}" alt="${esc(pick(img.alt))}" loading="lazy" decoding="async" width="1200" height="750">`).join('')}
+      </div>` : ''}
       <div class="project__top">
         <span class="project__icon" aria-hidden="true"><i data-lucide="${esc(p.icon || 'folder-git-2')}"></i></span>
         <div class="project__links">
